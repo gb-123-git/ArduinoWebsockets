@@ -1,7 +1,5 @@
 #pragma once
 
-#ifdef ESP32 
-
 #include <tiny_websockets/internals/ws_common.hpp>
 #include <tiny_websockets/network/tcp_client.hpp>
 #include <tiny_websockets/network/tcp_server.hpp>
@@ -77,5 +75,3 @@ namespace websockets { namespace network {
     WiFiServer server;
   };
 }} // websockets::network
-
-#endif // #ifdef ESP32 
