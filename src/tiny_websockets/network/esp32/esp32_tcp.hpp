@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef ESP32 
+
 
 #include <tiny_websockets/internals/ws_common.hpp>
 #include <tiny_websockets/network/tcp_client.hpp>
@@ -15,6 +15,10 @@ namespace websockets { namespace network {
   
   class SecuredEsp32TcpClient : public GenericEspTcpClient<WiFiClientSecure> {
   public:
+    void setInsecure() {
+      this->client.setInsecure();
+    }
+    
     void setCACert(const char* ca_cert) {
       this->client.setCACert(ca_cert);
     }
@@ -77,5 +81,3 @@ namespace websockets { namespace network {
     WiFiServer server;
   };
 }} // websockets::network
-
-#endif // #ifdef ESP32 
